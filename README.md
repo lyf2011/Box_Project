@@ -1,1 +1,2 @@
-# Box_Project
+# 宝箱编程题
+运行环境：直接在浏览器中打开index.html即可
