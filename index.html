@@ -20,6 +20,25 @@
             this.box_no = box_no;
             this.last_hash = lastHash
         }
+
+        /*
+            开宝箱方法
+        */
+        Box.prototype.openBox = function () {
+            this.timeFlag = new Date().getTime();
+            let secretNum = 0
+            while (true) {
+                let str = '' + this.box_no + this.timeFlag + this.last_hash + secretNum;
+                let hashStr = CryptoJS.SHA256(str).toString()
+                if (hashStr.startsWith('00000')) {
+                    this.hash = hashStr
+                    document.writeln('恭喜您成功打开第' + this.box_no + '个宝箱, 神秘数字是:' + secretNum + '      hash值是     ' + hashStr)
+                    console.log('恭喜您成功打开第' + this.box_no + '个宝箱, 神秘数字是:' + secretNum + '      hash值是     ' + hashStr)
+                    return secretNum
+                }
+                secretNum++
+            }
+        }
     </script>
 
 </body>
