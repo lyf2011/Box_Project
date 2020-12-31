@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>神秘宝箱</title>
 </head>
+
 <body>
-    
+    <script type="text/javascript" src="./js/core.js"></script>
+    <script type="text/javascript" src="./js/hash256.js"></script>
+    <script type="text/javascript">
+        /*
+            宝箱类
+            box_no: 宝箱编号
+            lastBox：上一个宝箱
+        */
+        function Box(box_no, lastHash) {
+            this.box_no = box_no;
+            this.last_hash = lastHash
+        }
+    </script>
+
 </body>
+
 </html>
